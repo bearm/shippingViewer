@@ -1,0 +1,31 @@
+<div class="headerContainer container">
+    <div class="logo display_inline_block">
+        <img src="assets/images/packlink.png">
+    </div>
+    <div class="infoHeader display_inline_block">
+        <div class="box display_inline_block">
+            <icon class="icon"></icon>
+            <span class="label">x 2</span>
+        </div>
+        <div class="toFrom display_inline_block">
+            <div>{{dictionary.header.spain}}</div>
+            <div class="num"> 03340</div>
+        </div>
+        <div class="arrow display_inline_block"></div>
+        <div class="toFrom display_inline_block">
+            <div>{{dictionary.header.united_kingdom}}</div>
+            <div class="num"> 48890</div>
+        </div>
+    </div>
+    <div class="claim display_inline_block">
+        <div class="title">{{dictionary.header.instructions_line1}}</div>
+        <div class="subtitle">{{dictionary.header.instructions_line2}}</div>
+    </div>
+    <div class="languages display_inline_block">
+        <div class="language display_inline_block"
+             ng-repeat="language in availableLangs"
+             ng-click="setCurrentLang(language.name)">
+            {{language.name}}
+        </div>
+    </div>
+</div>

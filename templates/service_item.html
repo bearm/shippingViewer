@@ -1,0 +1,48 @@
+<div class="itemInfo">
+    <div class="company">
+        <div class="logo">
+            <div class="display_table">
+                <div class="display_table_cell">
+                    <img src="./assets/images/{{service.carrier}}.png">
+                    <div class="name"> {{service.name}} </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="information">
+        <div class="fromTo">
+            <div class="calendar"> <div class="date">{{date | date:'dd'}}</div> </div>
+            <div class="text">
+                <div>{{service.from.text}}</div>
+                <div class="time">{{service.from.time}}</div>
+            </div>
+        </div>
+        <div class="dotted"></div>
+        <div class="transitHours">
+            <div class="time">{{service.transit_hours}} h</div>
+            <div class="claim">{{dictionary.serviceitem.granted}}</div>
+        </div>
+        <div class="dotted"></div>
+        <div class="fromTo">
+            <div class="calendar"> <div class="date">{{getEndHour(service.transit_hours) | date:'dd' }}</div> </div>
+            <div class="text">
+                <div>{{service.to.text}}</div>
+                <div class="time">{{service.to.time}}</div>
+            </div>
+        </div>
+    </div>
+    <div class="itemPrice">
+        <div ng-if="service.price != null" class="price">{{service.price.base_price  | currency : service.currency}} <span>+ VAT</span></div>
+        <div ng-click="selectService()" class="select display_table">
+            <div class="display_table_cell">{{dictionary.serviceitem.select_button}}</div>
+        </div>
+    </div>
+</div>
+<div class="itemProperties display_table">
+    <div class="propertiesList display_table_cell">
+        <div class="property" ng-repeat="property in service.service_info">
+            {{property .text}}
+        </div>
+    </div>
+    <a class="fullDetails display_table_cell" href="{{service.details_url}}">{{dictionary.serviceitem.full_details}}</a>
+</div>
