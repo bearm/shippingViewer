@@ -1,0 +1,332 @@
+@import "mixins";
+
+body {
+  font-family: "sans-serif";
+  line-height: 1.45em;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: $anchor-text;
+  text-decoration: none;
+  @include transition(all 0.4s ease-out);
+  &:hover{
+    text-decoration: underline;
+  }
+}
+.block{
+  width: 100%;
+  float: left;
+}
+.container{
+  max-width: 1115px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+.display_table {
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+.display_table_cell {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+.display_inline_block{
+  display: inline-block;
+  vertical-align: middle;
+}
+
+header {
+  height: 90px;
+  background: $dark-blue;
+  color: $header-text;
+  .logo {
+    width: 74px;
+    height: auto;
+    padding: 30px 45px 25px 0;
+    border-right: 1px dashed $light-text;
+    img{
+      width: 90px
+    }
+  }
+  .infoHeader {
+    color: $header-text;
+    border-right: 1px dashed $light-text;
+    padding: 26px;
+    height: 38px;
+    .box{
+      .icon {
+        height: 34px;
+        width: 32px;
+        display: inline-block;
+        background-image: url('./../../assets/images/box.png');
+        @include cover-background();
+      }
+      .label {
+        position: relative;
+        top: -10px;
+        padding: 0px 25px 0px 3px;
+      }
+    }
+    .toFrom {
+      padding: 0 33px 0 25px;
+      .num {
+        color: $light-text;
+      }
+    }
+    .arrow{
+      border-bottom: 1px dashed $light-text;
+      width: 45px;
+    }
+  }
+  .claim {
+    @include flex(1px);
+    margin: auto 0;
+    padding: 26px;
+    height: 38px;
+    .title{
+      font-size: 15px;
+    }
+    .subtitle{
+      font-size: 15px;
+      color: $light-text;
+    }
+  }
+  .languages {
+    float: right;
+    padding-top: 30px;
+    .language {
+      text-transform: uppercase;
+      font-size: 14px;
+      border-right: 1px solid $light-text;
+      padding: 0 10px;
+      cursor: pointer;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+    .language:last-child {
+      border: none;
+      padding-right: 0px;
+    }
+  }
+}
+
+.listServices {
+  margin-top: 52px;
+  .title {
+    font-size: 42px;
+    color: $dark-blue;
+    display: inline-block;
+  }
+  .actions {
+    float: right;
+    padding-top: 8px;
+    .label {
+      color: $grey;
+      float: left;
+    }
+    .orders {
+      float: left;
+      .order {
+        cursor: pointer;
+        display: inline-block;
+        color: $anchor-text;
+        border-right: 1px solid $grey;
+        padding: 0 10px;
+        &:hover{
+          color: $dark-blue;
+        }
+      }
+      .order:last-child {
+        border: none;
+        padding-right: 0;
+      }
+    }
+  }
+  .services {
+    margin-top: 45px;
+    .item {
+      @include transition(all 0.3s ease-in-out);
+      &:hover{
+        @include box-shadow(0 5px 10px rgba(0,0,0,0.3));
+        @include transform(scale(1) translate(0, -4px));
+      }
+      border: 1px dashed $light-blue;
+      margin-bottom: 40px;
+      float: left;
+      height: 196px;
+      width: 100%;
+      @include rounded(6px);
+      .itemInfo {
+        height:157px;
+        .company {
+          width: 136px;
+          height: 157px;
+          background: $extra-light-blue;
+          display: inline-block;
+          vertical-align: middle;
+          text-align: center;
+          position: relative;
+          .logo {
+            @include center-absolute();
+            width: 105px;
+            img{
+              max-width: 60px;
+            }
+            .name {
+              color: $light-text;
+              max-width: 105px;
+              @include ellipsis();
+            }
+          }
+        }
+        .information {
+          display: inline-block;
+          vertical-align: middle;
+          padding: 0 10px;
+          .dotted {
+            display: inline-block;
+            vertical-align: middle;
+            border-bottom: 1px dashed $light-text;
+            width: 65px;
+            position: relative;
+            top: 10px;
+          }
+          .fromTo {
+            display: inline-block;
+            vertical-align: middle;
+            padding: 0px 45px 0px 20px;
+            .calendar{
+              position: relative;
+              float: left;
+              width: 40px;
+              height: 43px;
+              text-align: center;
+              margin-right: 6px;
+              &:after {
+                content: " ";
+                width: 40px;
+                height: 43px;
+                background-image: url(./../../assets/images/calendar.png);
+                background-size: 40px;
+                background-repeat: no-repeat;
+                position: absolute;
+                right: 0;
+                opacity: 0.5;
+              }
+              .date{
+                position: absolute;
+                top: 17px;
+                left: 12px;
+                z-index: 1;
+                color: $dark-blue;
+              }
+            }
+            .text {
+              float: left;
+              color: $dark-blue;
+              .time {
+                color: $light-text;
+              }
+            }
+          }
+          .transitHours {
+            width: 105px;
+            display: inline-block;
+            vertical-align: middle;
+            text-align: center;
+            .time {
+              font-size: 32px;
+              color: $dark-blue;
+            }
+            .claim {
+              color: $light-text;
+            }
+          }
+        }
+        .itemPrice {
+          margin-left: 25px;
+          display: inline-block;
+          vertical-align: middle;
+          .price {
+            font-size: 28px;
+            font-weight: bold;
+            color: $dark-blue;
+            span{
+              font-size: 8px;
+            }
+          }
+          .select {
+            margin-top: 8px;
+            width: 120px;
+            height: 35px;
+            background: $button;
+            color: $header-text;
+            cursor: pointer;
+            @include transition(all 0.3s ease-in-out);
+            @include rounded(6px);
+            &:hover{
+              background: $button-hover
+            }
+          }
+        }
+      }
+      .itemProperties {
+        background: $light-blue;
+        color: $dark-blue;
+        height: 40px;
+        border-bottom-left-radius: 6px;
+        border-bottom-right-radius: 6px;
+        .propertiesList {
+          text-align: left;
+          .property {
+            margin-left: 50px;
+            display: inline-block;
+            background-image: url(./../../assets/images/note.png);
+            background-size: 18px;
+            background-repeat: no-repeat;
+            padding-left: 20px;
+            font-size: 12px;
+          }
+        }
+        .fullDetails {
+          padding-right: 55px;
+          text-align: right;
+          font-size: 13px;
+        }
+      }
+    }
+  }
+}
+
+footer {
+  color: $dark-blue;;
+  margin-top: 200px;
+  height: 62px;
+  border-top: 2px solid $light-blue;
+  padding: 20px 0px;
+  .copyRight {
+    text-align: left;
+    font-size: 10px;
+  }
+  .payments {
+    float: right;
+    text-transform: uppercase;
+    .paymentsList {
+      margin-top: 10px;
+      .payment {
+        width: 40px;
+        height: 25px;
+        padding-right: 10px;
+        float: left;
+        @include opacity(0.5)
+      }
+    }
+  }
+}

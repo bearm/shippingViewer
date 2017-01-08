@@ -1,0 +1,23 @@
+{
+  "header" : {
+    "spain" : "Spain",
+    "united_kingdom" : "United Kingdom",
+    "instructions_line1" : "Please select a service below to",
+    "instructions_line2" : "get your discounted price!"
+  },
+  "footer" : {
+    "copyright" : "© PackLink.es - all rights reserved - Have a look at our <a href=''>_LINK1_</a>, our <a href=''>_LINK2_</a> and our <a href=''>_LINK3_</a>.",
+    "payment" : "secure payment guaranteed"
+  },
+  "servicesitem" : {
+    "services_title" : "Select a service",
+    "order_by" : "Order by : ",
+    "order_by_price" : "Best price first",
+    "order_by_time" : "Shortest transit time first"
+  },
+  "serviceitem" : {
+    "select_button" : "Select This",
+    "full_details" : "Full details",
+    "granted" : "Granted"
+  }
+}

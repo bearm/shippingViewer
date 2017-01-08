@@ -1,0 +1,15 @@
+<div ng-controller="servicesCtrl" class="listServices block">
+    <div class="listServicesContainer container">
+        <div class="title"> {{dictionary.servicesitem.services_title}}</div>
+        <div class="actions">
+            <div class="label">{{dictionary.servicesitem.order_by}}</div>
+            <div class="orders">
+                <div class="order" ng-click="predicate = 'price.base_price'"> {{dictionary.servicesitem.order_by_price}}</div>
+                <div class="order" ng-click="predicate = '-1 * transit_hours'"> {{dictionary.servicesitem.order_by_time}}</div>
+            </div>
+        </div>
+        <div class="services">
+            <serviceitem ng-repeat="service in services.services | orderBy: predicate" class="item"></serviceitem>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+<div class="footerContainer container display_table">
+    <div class="copyRight display_table_cell" ng-bind-html="dictionary.footer.copyright | trust"></div>
+    <div class="payments">
+        <div class="label">{{dictionary.footer.payment}} </div>
+        <div class="paymentsList">
+            <img class="payment" data-ng-repeat="i in [1,2,3,4,5]" src="assets/images/credit-card-{{i}}.png">
+        </div>
+    </div>
+</div>
