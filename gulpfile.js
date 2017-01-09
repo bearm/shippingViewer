@@ -1,18 +1,21 @@
 /* File: gulpfile.js */
 var gulp   = require('gulp'),
     mocha  = require('gulp-mocha'),
+    gutil = require('gulp-util'),
     jshint = require('gulp-jshint'),
     sass   = require('gulp-sass'),
     uglify = require('gulp-uglify'),
     concat = require('gulp-concat'),
     rename = require('gulp-rename'),
     pump   = require('pump');
-/*
-gulp.task('default', () =>
-    gulp.src('test.js', {read: false})
-    .pipe(mocha({reporter: 'nyan'}))
-);*/
+
 gulp.task('default', ['watch']);
+
+gulp.task('mocha', function() {
+    return gulp.src(['test/*.js'], { read: false })
+        .pipe(mocha({ reporter: 'list' }))
+        .on('error', gutil.log);
+});
 
 gulp.task('jshint', function() {
     return gulp.src('app/**/*.js')
@@ -26,16 +29,6 @@ gulp.task('build-css', function() {
         .pipe(gulp.dest('assets/styles/css'));
 });
 
-/*gulp.task('compress', function (cb) {
-    pump([
-            gulp.src('app/!**!/!*.js'),
-            uglify(),
-            gulp.dest('assets/js_min')
-        ],
-        cb
-    );
-});*/
-
 gulp.task('build-js', function() {
     return gulp.src('app/**/*.js')
         .pipe(concat('scripts.js'))
@@ -44,6 +37,8 @@ gulp.task('build-js', function() {
         .pipe(uglify())
         .pipe(gulp.dest('assets/js_min'));
 });
+
+gulp.task('build', ['build-css', 'build-js']);
 
 gulp.task('watch', function() {
     gulp.watch('app/**/*.js', ['jshint']);
