@@ -63,7 +63,7 @@
             "details_url": "http://ups.com/ES/es/20301"
         },
         {
-            "currency": "EUR",
+            "currency": "GBP",
             "carrier": "UPS",
             "from": {
                 "text": "Pickup at home/offices",
@@ -121,7 +121,7 @@
             "details_url": "http://ups.com/ES/es/20190"
         },
         {
-            "currency": "EUR",
+            "currency": "USD",
             "carrier": "UPS",
             "from": {
                 "text": "Pickup at home/offices",
