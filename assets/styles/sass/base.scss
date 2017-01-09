@@ -64,7 +64,7 @@ header {
         height: 34px;
         width: 32px;
         display: inline-block;
-        background-image: url('./../../assets/images/box.png');
+        background-image: url('./../images/box.png');
         @include cover-background();
       }
       .label {
