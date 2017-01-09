@@ -1,0 +1,23 @@
+{
+  "name": "packlink",
+  "version": "0.0.0",
+  "description": "packlink package",
+  "main": "/scripts/app.js",
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/beatrizruizmatias/packlink.git"
+  },
+  "keywords": [
+    "angular",
+    "gulp",
+    "packlink"
+  ],
+  "author": "Beatriz Ruiz Matias",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/beatrizruizmatias/packlink/issues"
+  }
+}
