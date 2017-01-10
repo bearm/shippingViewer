@@ -65,8 +65,6 @@ angular.module("packlinkApp")
         };
     });
 
-
-
 angular.module("packlinkApp")
 	.directive("header", function(){
 		return {
@@ -90,6 +88,7 @@ angular.module("packlinkApp")
 			templateUrl: "./views/service_item.html"
 		}
 	});
+
 angular.module("packlinkApp")
     .filter("trust", ['$sce', function($sce) {
         return function(htmlCode){

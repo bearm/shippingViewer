@@ -59,9 +59,9 @@ header {
     height: 38px; }
     header .infoHeader .box .icon {
       height: 34px;
-      width: 32px;
+      width: 34px;
       display: inline-block;
-      background-image: url("./../images/box.png");
+      background-image: url("../../images/box.png");
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center; }
@@ -195,7 +195,8 @@ header {
           .listServices .services .item .itemInfo .information .fromTo {
             display: inline-block;
             vertical-align: middle;
-            padding: 0px 45px 0px 20px; }
+            padding: 0px 45px 0px 20px;
+            font-size: 13px; }
             .listServices .services .item .itemInfo .information .fromTo .calendar {
               position: relative;
               float: left;
@@ -207,7 +208,7 @@ header {
                 content: " ";
                 width: 40px;
                 height: 43px;
-                background-image: url(./../../assets/images/calendar.png);
+                background-image: url(../../images/calendar.png);
                 background-size: 40px;
                 background-repeat: no-repeat;
                 position: absolute;
@@ -230,7 +231,7 @@ header {
             vertical-align: middle;
             text-align: center; }
             .listServices .services .item .itemInfo .information .transitHours .time {
-              font-size: 32px;
+              font-size: 30px;
               color: #3F698B; }
             .listServices .services .item .itemInfo .information .transitHours .claim {
               color: #8AA6C1; }
@@ -239,7 +240,7 @@ header {
           display: inline-block;
           vertical-align: middle; }
           .listServices .services .item .itemInfo .itemPrice .price {
-            font-size: 28px;
+            font-size: 24px;
             font-weight: bold;
             color: #3F698B; }
             .listServices .services .item .itemInfo .itemPrice .price span {
@@ -272,7 +273,7 @@ header {
           .listServices .services .item .itemProperties .propertiesList .property {
             margin-left: 50px;
             display: inline-block;
-            background-image: url(./../../assets/images/note.png);
+            background-image: url(../../images/note.png);
             background-size: 18px;
             background-repeat: no-repeat;
             padding-left: 20px;

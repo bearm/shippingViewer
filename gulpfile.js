@@ -31,19 +31,19 @@ gulp.task('build-css', function() {
 
 gulp.task('build-vendor-js', function() {
     return gulp.src('vendor/*.js')
-        .pipe(concat('vendor.js'))
-        .pipe(gulp.dest('assets/js_min'))
-        .pipe(rename('vendor.min.js'))
         .pipe(uglify())
         .pipe(gulp.dest('assets/js_min'));
 });
 
 gulp.task('build-js', function() {
+    var uglyOptions = {
+        mangle: false
+    };
     return gulp.src('app/**/*.js')
         .pipe(concat('scripts.js'))
         .pipe(gulp.dest('assets/js_min'))
         .pipe(rename('scripts.min.js'))
-        .pipe(uglify())
+        .pipe(uglify(uglyOptions))
         .pipe(gulp.dest('assets/js_min'));
 });
 
