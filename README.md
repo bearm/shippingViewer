@@ -1,2 +1,1 @@
-- The transition hours should be an string
-- The icons should be better in svg format so you can modify their size and color without loosing quality
+
