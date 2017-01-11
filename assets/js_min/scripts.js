@@ -24,7 +24,7 @@ angular.module("packlinkApp", [])
         $scope.loadDictionary();
     }])
     .controller("servicesCtrl", function ($scope, $http) {
-        $scope.date = new Date();
+        $scope.today = new Date();
         $scope.predicate = '';
         $scope.services = null;
         $http({
@@ -61,6 +61,7 @@ angular.module("packlinkApp")
             $http.get('assets/dictionary/' + this.currentLang + '.json')
                 .success(function(response) {
                     callback(response);
+                    return response;
                 });
         };
     });
@@ -79,7 +80,7 @@ angular.module("packlinkApp")
 	.directive("serviceitems", function(){
 		return {
 			restrict: 'E',
-			replace:true,
+			replace: true,
 			templateUrl: "./views/service_items.html"
 		}
 	})
@@ -87,8 +88,25 @@ angular.module("packlinkApp")
 		return {
 			templateUrl: "./views/service_item.html"
 		}
+	})
+	.directive("claimtime", function(){
+		return {
+			replace: true,
+			restrict: 'E',
+			scope: {
+				date: '=',
+				fromto: '='
+			},
+			template: "<div class='fromTo'>" +
+				"<div class='calendar'>" +
+					"<div class='date'>{{date | date:'dd'}}</div>" +
+				"</div>" +
+				"<div class='text'>" +
+					"<div>{{fromto.text}}</div>" +
+					"<div class='time'>{{fromto.time}}</div>" +
+				"</div></div>"
+		}
 	});
-
 angular.module("packlinkApp")
     .filter("trust", ['$sce', function($sce) {
         return function(htmlCode){
