@@ -10,12 +10,22 @@
         </div>
     </div>
     <div class="information">
-        <claimtime date="today" fromto="service.from"></claimtime>
+        <div class='fromTo'>
+            <div class='calendar'>
+                <div class='date'>{{today | date:'dd'}}</div>
+            </div>
+            <claimtime fromto="service.from"></claimtime>
+        </div>
         <div class="transitHours">
             <div class="time">{{service.transit_hours}} h</div>
             <div class="claim">{{dictionary.serviceitem.granted}}</div>
         </div>
-        <claimtime date="getEndHour(service.transit_hours)" fromto="service.to"></claimtime>
+        <div class='fromTo'>
+            <div class='calendar'>
+                <div class='date'>{{getEndHour(service.transit_hours) | date:'dd'}}</div>
+            </div>
+            <claimtime fromto="service.to"></claimtime>
+        </div>
     </div>
     <div class="itemPrice">
         <div ng-if="service.price != null" class="price">{{service.price.base_price  | currency : service.currency}} <span>+ VAT</span></div>

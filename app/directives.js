@@ -24,18 +24,12 @@ angular.module("packlinkApp")
 	.directive("claimtime", function(){
 		return {
 			replace: true,
-			restrict: 'E',
 			scope: {
-				date: '=',
 				fromto: '='
 			},
-			template: "<div class='fromTo'>" +
-				"<div class='calendar'>" +
-					"<div class='date'>{{date | date:'dd'}}</div>" +
-				"</div>" +
-				"<div class='text'>" +
+			template: "<div class='text'>" +
 					"<div>{{fromto.text}}</div>" +
 					"<div class='time'>{{fromto.time}}</div>" +
-				"</div></div>"
+				"</div>"
 		}
 	});

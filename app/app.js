@@ -1,5 +1,8 @@
 angular.module("packlinkApp", [])
     .controller("commonCtrl", ['$scope', '$http', 'dictionaryLoader', function($scope, $http, dictionaryLoader) {
+        $scope.dictionary = null;
+        $scope.availableLangs = null;
+
         dictionaryLoader.loadAvailableLangs(function(response){
             $scope.availableLangs = response;
         });
@@ -32,8 +35,6 @@ angular.module("packlinkApp", [])
             url: 'assets/data/services.json'})
             .success(function (data) {
                 $scope.services = data;
-            })
-            .error(function (x1, x2, x3) {
             });
 
         $scope.getEndHour = function (transit_hours) {

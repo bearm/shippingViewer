@@ -7,7 +7,7 @@ describe('directives', function() {
     var innerScope;
 
     beforeEach(inject(function($rootScope, $compile) {
-        element = angular.element('<claimtime date="today"></claimtime>');
+        element = angular.element('<claimtime fromto="fromtotext"></claimtime>');
 
         outerScope = $rootScope;
 
@@ -21,13 +21,15 @@ describe('directives', function() {
     describe('checking date parameter', function() {
         beforeEach(function() {
             outerScope.$apply(function() {
-                outerScope.today = new Date();
+                outerScope.fromtotext = {
+                    "text": "Pickup at home/offices",
+                    "time": "mornings 8 to 14h"
+                };
             });
         });
 
         it('should be rendered', function() {
-            var expected = outerScope.today.getDate().toString();
-            expect(element[0].children[0].children[0].innerHTML).to.equal(expected);
+            expect(element[0].children[0].innerHTML).to.equal("Pickup at home/offices");
         });
     });
 });
