@@ -190,13 +190,10 @@ header {
           display: inline-block;
           vertical-align: middle;
           padding: 0 10px;
+          position: relative;
           .dotted {
-            display: inline-block;
-            vertical-align: middle;
             border-bottom: 1px dashed $light-text;
             width: 65px;
-            position: relative;
-            top: 10px;
           }
           .fromTo {
             display: inline-block;
@@ -239,16 +236,45 @@ header {
           }
           .transitHours {
             width: 105px;
+            padding: 65px;
             display: inline-block;
             vertical-align: middle;
             text-align: center;
             .time {
               font-size: 30px;
               color: $dark-blue;
+              position: relative;
+              &:after {
+                right: 115px;
+              }
+              &:before {
+                left: 115px;
+              }
+              &:after,
+              &:before {
+                content: "";
+                border-bottom: 1px dashed $light-text;
+                position: absolute;
+                top: 25px;
+                z-index: 1;
+                width: 0;
+                -webkit-animation-direction: alternate;
+                animation-direction: alternate;
+                @include animation(width-animation 0.5s ease-out forwards 0.5s);
+                @include keyframes(width-animation) {
+                  from {
+                    width: 0;
+                  }
+                  to {
+                    width: 65px;
+                  }
+                }
+              }
             }
             .claim {
               color: $light-text;
             }
+
           }
         }
         .itemPrice {

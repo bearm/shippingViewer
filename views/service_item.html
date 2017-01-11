@@ -11,12 +11,10 @@
     </div>
     <div class="information">
         <claimtime date="today" fromto="service.from"></claimtime>
-        <div class="dotted"></div>
         <div class="transitHours">
             <div class="time">{{service.transit_hours}} h</div>
             <div class="claim">{{dictionary.serviceitem.granted}}</div>
         </div>
-        <div class="dotted"></div>
         <claimtime date="getEndHour(service.transit_hours)" fromto="service.to"></claimtime>
     </div>
     <div class="itemPrice">
