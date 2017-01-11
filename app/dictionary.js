@@ -15,6 +15,7 @@ angular.module("packlinkApp")
             $http.get('assets/dictionary/' + this.currentLang + '.json')
                 .success(function(response) {
                     callback(response);
+                    return response;
                 });
         };
     });

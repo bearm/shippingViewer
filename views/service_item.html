@@ -10,26 +10,14 @@
         </div>
     </div>
     <div class="information">
-        <div class="fromTo">
-            <div class="calendar"> <div class="date">{{date | date:'dd'}}</div> </div>
-            <div class="text">
-                <div>{{service.from.text}}</div>
-                <div class="time">{{service.from.time}}</div>
-            </div>
-        </div>
+        <claimtime date="today" fromto="service.from"></claimtime>
         <div class="dotted"></div>
         <div class="transitHours">
             <div class="time">{{service.transit_hours}} h</div>
             <div class="claim">{{dictionary.serviceitem.granted}}</div>
         </div>
         <div class="dotted"></div>
-        <div class="fromTo">
-            <div class="calendar"> <div class="date">{{getEndHour(service.transit_hours) | date:'dd' }}</div> </div>
-            <div class="text">
-                <div>{{service.to.text}}</div>
-                <div class="time">{{service.to.time}}</div>
-            </div>
-        </div>
+        <claimtime date="getEndHour(service.transit_hours)" fromto="service.to"></claimtime>
     </div>
     <div class="itemPrice">
         <div ng-if="service.price != null" class="price">{{service.price.base_price  | currency : service.currency}} <span>+ VAT</span></div>

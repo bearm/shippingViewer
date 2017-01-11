@@ -24,7 +24,7 @@ angular.module("packlinkApp", [])
         $scope.loadDictionary();
     }])
     .controller("servicesCtrl", function ($scope, $http) {
-        $scope.date = new Date();
+        $scope.today = new Date();
         $scope.predicate = '';
         $scope.services = null;
         $http({

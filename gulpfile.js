@@ -1,21 +1,12 @@
 /* File: gulpfile.js */
 var gulp   = require('gulp'),
-    mocha  = require('gulp-mocha'),
-    gutil = require('gulp-util'),
     jshint = require('gulp-jshint'),
     sass   = require('gulp-sass'),
     uglify = require('gulp-uglify'),
     concat = require('gulp-concat'),
-    rename = require('gulp-rename'),
-    pump   = require('pump');
+    rename = require('gulp-rename');
 
 gulp.task('default', ['watch']);
-
-gulp.task('mocha', function() {
-    return gulp.src(['test/*.js'], { read: false })
-        .pipe(mocha({ reporter: 'list' }))
-        .on('error', gutil.log);
-});
 
 gulp.task('jshint', function() {
     return gulp.src('app/**/*.js')
@@ -25,7 +16,9 @@ gulp.task('jshint', function() {
 
 gulp.task('build-css', function() {
     return gulp.src('assets/styles/sass/**/*.scss')
-        .pipe(sass())
+        .pipe(sass({
+            outputStyle: 'compressed'
+        }))
         .pipe(gulp.dest('assets/styles/css'));
 });
 
